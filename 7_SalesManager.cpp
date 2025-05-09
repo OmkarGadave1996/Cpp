@@ -38,69 +38,70 @@ struct SalesManager
     double salary;
     int target;
     double incentive;
-    void setId(int i) {
-        id = i;
+    void setId(int i) 
+    {
+        this->id = i;
     }
     void setName(const char* n) 
     {
-        strncpy(name, n, sizeof(name) - 1);
-        name[sizeof(name) - 1] = '\0';
+        strncpy(this->name, n);
     }
     void setSalary(double s)
 	{
-        salary = s;
+        this->salary = s;
     }
     void setTarget(int t)
 	{
-        target = t;
+        this->target = t;
     }
     void setIncentive(double inc)
 	{
-        incentive = inc;
+        this->incentive = inc;
     }
     int getId()
 	{
-        return id;
+        return this->id;
     }
     const char* getName()
 	{
-        return name;
+        return this->name;
     }
     double getSalary()
 	{
-        return salary;
+        return this->salary;
     }
     int getTarget()
 	{
-        return target;
+        return this->target;
     }
     double getIncentive()
 	{
-        return incentive;
+        return this->incentive;
     }
-    void display()
-	{
-        cout << "Employee id: " << getId() << endl;
-        cout << "Name: " << getName() << endl;
-        cout << "Salary: " << getSalary() << endl;
-        cout << "Target: " << getTarget() << endl;
-        cout << "Incentive: " << getIncentive() << endl;
-    }
+
     SalesManager()
     {
-        id = 0;
-        strcpy(name,"Not given");
-        salary = 0;
-        target = 0;
-        incentive = 0;
+        this->id = 0;
+        strcpy(this->name,"Not given");
+        this->salary = 0;
+        this->target = 0;
+        this->incentive = 0;
     }
     SalesManager(int Emp_id, char* nm, double sa, int ta, double in)
     {
-        id = Emp_id;
-        strcpy(name,nm);
-        salary = sa;
-        target = ta;
-        incentive = in;
+        this->id = Emp_id;
+        strcpy(this->name,nm);
+        this->salary = sa;
+        this->target = ta;
+        this->incentive = in;
+    }
+    void display()
+	{
+        cout << "Employee id: " << this->id;
+        cout << "Name: " << this->name;
+        cout << "Salary: " << this->salary;
+        cout << "Target: " << this->target;
+        cout << "Incentive: " << this->incentive;
     }
 };
 int main()

@@ -36,57 +36,56 @@ struct HRM
     double commision;
     void setId(int i) 
 	{
-        id = i;
+        this->id = i;
     }
     void setName(const char* n) 
 	{
-        strncpy(name, n, sizeof(name) - 1);
-        name[sizeof(name) - 1] = '\0';
+        strncpy(this->name, n);
     }
     void setSalary(double s) 
 	{
-        salary = s;
+        this->salary = s;
     }
     void setcommision(double c) 
 	{
-        commision = c;
+        this->commision = c;
     }
     int getId()
 	{
-        return id;
+        return this->id;
     }
     const char* getName()
 	{
-        return name;
+        return this->name;
     }
     double getSalary()
 	{
-        return salary;
+        return this->salary;
     }
     double getcommision()
 	{
-        return commision;
-    }
-    void display()
-	{
-        cout << "Employee id: " << getId() << endl;
-        cout << "Name: " << getName() << endl;
-        cout << "Salary: " << getSalary() << endl;
-        cout << "Commision: " << getcommision() << endl;
+        return this->commision;
     }
     HRM()
     {
-        id = 0;
-        strcpy(name,"Not given");
-        salary = 0;
-        commision = 0;
+        this->id = 0;
+        strcpy(this->name,"Not given");
+        this->salary = 0;
+        this->commision = 0;
     }
-    HRM(int Emp_id,char* nm,double sa,double co)
+    HRM(int Emp_id,const char* nm,double sa,double co)
     {
-        id = Emp_id;
-        strcpy(name,nm);
-        salary = sa;
-        commision = co;
+        this->id = Emp_id;
+        strcpy(this->name,nm);
+        this->salary = sa;
+        this->commision = co;
+    }
+    void display()
+	{
+        cout << "Employee id: " << this->id << endl;
+        cout << "Name: " << this->name << endl;
+        cout << "Salary: " << this->salary << endl;
+        cout << "Commision: " << this->commision << endl;
     }
 };
 int main() 

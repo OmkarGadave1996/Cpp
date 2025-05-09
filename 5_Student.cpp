@@ -29,36 +29,37 @@ struct Student
 
     void setRollNo(int roll)
     {
-        rollno = roll;
+        this->rollno = roll;
     }
 
     void setName(const char* n)  // Use const char* to match string literals
     {
-        // Use strncpy to safely copy the string and ensure null-termination
-        strncpy(name, n, sizeof(name) - 1);
-        name[sizeof(name) - 1] = '\0';  // Ensure null-termination
+        strncpy(this->name, n);
     }
 
     int getRollNo() 
     {
-        return rollno;
+        return this->rollno;
     }
 
     const char* getName()  // Return const char* to avoid potential modification of name
     {
-        return name;
+        return this->name;
     }
-
-    void display()
-    {
-        cout << "Roll No: " << getRollNo() << endl;
-        cout << "Name: " << getName() << endl;
-    }
-
     Student()
     {
-        rollno = 0;
-        strcpy(name,"Not Given");
+        this->rollno = 0;
+        strcpy(this->name,"Not Given");
+    }
+    Student(int r, char* nm)
+    {
+        this->rollno = r;
+        strcpy(this->name,nm);
+    }       
+    void display()
+    {
+        cout << "Roll No: " << this->rollno;
+        cout << "Name: " << this->name;
     }
 };
 

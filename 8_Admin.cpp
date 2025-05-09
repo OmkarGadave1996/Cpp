@@ -36,57 +36,56 @@ struct Admin
     double allowance;
     void setId(int i) 
 	{
-        id = i;
+        this->id = i;
     }
     void setName(const char* n) 
 	{
-        strncpy(name, n, sizeof(name) - 1);
-        name[sizeof(name) - 1] = '\0';
+        strncpy(this->name, n);
     }
     void setSalary(double s) 
 	{
-        salary = s;
+        this->salary = s;
     }
     void setAllowance(double a) 
 	{
-        allowance = a;
+        this->allowance = a;
     }
     int getId()
 	{
-        return id;
+        return this->id;
     }
     const char* getName()
 	{
-        return name;
+        return this->name;
     }
     double getSalary()
 	{
-        return salary;
+        return this->salary;
     }
     double getAllowance()
 	{
-        return allowance;
-    }
-    void display()
-	{
-        cout << "Employee id: " << getId() << endl;
-        cout << "Name: " << getName() << endl;
-        cout << "Salary: " << getSalary() << endl;
-        cout << "Allowance: " << getAllowance() << endl;
+        return this->allowance;
     }
     Admin()
     {
-        id = 0;
-        strcpy(name,"Not given");
-        salary = 0;
-        allowance = 0;
+        this->id = 0;
+        strcpy(this->name,"Not given");
+        this->salary = 0;
+        this->allowance = 0;
     }
-    Admin(int Emp_id, char* nm, double sa, double al)
+    Admin(int Emp_id,const char* nm, double sa, double al)
     {
-        id = Emp_id;
-        strcpy(name,nm);
-        salary = sa;
-        allowance = al;
+        this->id = Emp_id;
+        strcpy(this->name,nm);
+        this->salary = sa;
+        this->allowance = al;
+    }
+    void display()
+	{
+        cout << "Employee id: " << this->id << endl;
+        cout << "Name: " << this->name << endl;
+        cout << "Salary: " << this->salary << endl;
+        cout << "Allowance: " << this->allowance << endl;
     }
 };
 int main() 

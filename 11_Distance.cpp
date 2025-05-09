@@ -27,35 +27,35 @@ struct Distance
     // Setter functions
     void setFeet(int f) 
 	{
-        feet = f;
+        this->feet = f;
     }
     void setInch(int i) 
 	{
-        inch = i;
+        this->inch = i;
     }
     // Getter functions
     int getFeet()
 	{
-        return feet;
+        return this->feet;
     }
     int getInch()
 	{
-        return inch;
+        return this->inch;
+    }
+    Distance()
+    {
+        this->feet = 0;
+        this->inch = 0;
+    }
+    Distance(int fe, int in)
+    {
+        this->feet = fe;
+        this->inch = in;
     }
     // Display function
     void display()
 	{
-        cout << getFeet() << " feet, " << getInch() << " inch" << endl;
-    }
-    Distance()
-    {
-        feet = 0;
-        inch = 0;
-    }
-    Distance(int fe, int in)
-    {
-        feet = fe;
-        inch = in;
+        cout << this->feet << " feet, " << this->inch << " inch" << endl;
     }
 };
 int main() {

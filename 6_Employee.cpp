@@ -32,46 +32,45 @@ struct Employee
     double salary;
     void setId(int i) 
 	{
-        id = i;
+        this->id = i;
     }
     void setName(const char* n) 
 	{
-        strncpy(name, n, sizeof(name) - 1);
-        name[sizeof(name) - 1] = '\0';
+        strncpy(this->name, n);
     }
     void setSalary(double s) 
 	{
-        salary = s;
+        this->salary = s;
     }
     int getId()
 	{
-        return id;
+        return this->id;
     }
     const char* getName()
 	{
-        return name;
+        return this->name;
     }
     double getSalary()
 	{
-        return salary;
-    }
-    void display()
-	{
-        cout << "Employee id: " << getId() << endl;
-        cout << "Name: " << getName() << endl;
-        cout << "Salary: " << getSalary() << endl;
+        return this->salary;
     }
     Employee()
     {
-        id = 0;
-        strcpy(name,"Not given");
-        salary = 0;
+        this->id = 0;
+        strcpy(this->name,"Not given");
+        this->salary = 0;
     }
     Employee(int Emp_id, char* nm, double sa)
     {
-        id = Emp_id;
-        strcpy(name,nm);
-        salary = sa;
+        this->id = Emp_id;
+        strcpy(this->name,nm);
+        this->salary = sa;
+    }
+    void display()
+	{
+        cout << "Employee id: " << this->id;
+        cout << "Name: " << this->name;
+        cout << "Salary: " << this->salary;
     }
 };
 int main() 

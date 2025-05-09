@@ -12,7 +12,7 @@
 // 	{
 // 		month = m;
 // 	}
-// 	void setyear(int y)	
+// 	void setyear(int y)
 // 	{
 // 		year = y;
 // 	}
@@ -52,53 +52,54 @@ struct date
     int month;
     int year;
     void setday(int d)
-	{
-        day = d;
+    {
+        this->day = d;
     }
-    void setmonth(int m) 
-	{
-        month = m;
+    void setmonth(int m)
+    {
+        this->month = m;
     }
-    void setyear(int y) 
-	{
-        year = y;
+    void setyear(int y)
+    {
+        this->year = y;
     }
-    int getday() 
-	{
-        return day;
+    int getday()
+    {
+        return this->day;
     }
-    int getmonth() 
-	{
-        return month;
+    int getmonth()
+    {
+        return this->month;
     }
-    int getyear() 
-	{
-        return year;
+    int getyear()
+    {
+        return this->year;
     }
     date()
     {
-        day = 0;
-        month = 0;
-        year =0;
+        this->day = 0;
+        this->month = 0;
+        this->year = 0;
     }
     date(int da, int mo, int ye)
     {
-        day = da;
-        month = mo;
-        year = ye;
+        this->day = da;
+        this->month = mo;
+        this->year = ye;
+    }
+    void display()
+    {
+        cout << this->day << " day, "
+        << this->month << " month, "
+        << this->year << " year" << endl;
     }
 };
-void display(date* ptr) 
-{
-    cout << ptr->getday() << " day, "
-         << ptr->getmonth() << " month, "
-         << ptr->getyear() << " year" << endl;
-}
-int main() 
+
+int main()
 {
     date d1;
     d1.setday(10);
     d1.setmonth(5);
     d1.setyear(2024);
-    display(&d1);
+    d1.display();
 }

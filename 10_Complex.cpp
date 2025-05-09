@@ -27,35 +27,35 @@ struct Complex
     // Setter functions
     void setReal(int r) 
 	{
-        real = r;
+        this->real = r;
     }
     void setImaginary(int i) 
 	{
-        imaginary = i;
+        this->imaginary = i;
     }
     // Getter functions
     int getReal()
 	{
-        return real;
+        return this->real;
     }
     int getImaginary()
 	{
-        return imaginary;
+        return this->imaginary;
+    }
+    Complex()
+    {
+        this->real = 0;
+        this->imaginary =0;
+    }
+    Complex(int re, int im)
+    {
+        this->real = re;
+        this->imaginary = im;
     }
     // Display function
     void display() 
 	{
-        cout << getReal() << " + " << getImaginary() << "i" << endl;
-    }
-    Complex()
-    {
-        real = 0;
-        imaginary =0;
-    }
-    Complex(int re, int im)
-    {
-        real = re;
-        imaginary = im;
+        cout << this->real << " + " << this->imaginary << "i" << endl;
     }
 };
 int main() 

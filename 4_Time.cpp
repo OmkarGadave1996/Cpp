@@ -30,55 +30,56 @@ struct Time
     // Setter functions
     void setHr(int h)
     {
-        Hr = h;
+        this->Hr = h;
     }
     void setMin(int m)
     {
-        Min = m;
+        this->Min = m;
     }
     void setSec(int s)
     {
-        Sec = s;
+        this->Sec = s;
     }
     // Getter functions
     int getHr()
     {
-        return Hr;
+        return this->Hr;
     }
     int getMin()
     {
-        return Min;
+        return this->Min;
     }
-    int getSec()
+    int getSec()this->
     {
-        return Sec;
+        return this->Sec;
     }
     Time()
     {
-        Hr = 0;
-        Min = 0;
-        Sec = 0;
+        this->Hr = 0;
+        this->Min = 0;
+        this->Sec = 0;
     }
     Time(int ho, int mn, int sc)
     {
-        Hr = ho;
-        Min = mn;
-        Sec = sc;
+        this->Hr = ho;
+        this->Min = mn;
+        this->Sec = sc;
+    }
+    // Display function
+    void display()
+    {
+        cout << this->Hr << " Hr : "
+        << this->Min << " Min :  "
+        << this->Sec << " Sec : " << endl;
     }
 };
-// Display function
-void display(Time *ptr)
-{
-    cout << ptr->getHr() << " Hr : "
-         << ptr->getMin() << " Min :  "
-         << ptr->getSec() << " Sec : " << endl;
-}
+
 int main()
 {
     Time t1; // Declare an instance of the Time struct
     t1.setHr(10);
     t1.setMin(5);
     t1.setSec(20);
-    display(&t1);
+    t1.display();
     return 0;
 }
